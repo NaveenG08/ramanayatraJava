@@ -1,0 +1,36 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+
+  <filter>
+    <filter-name>SecurityFilter</filter-name>
+    <filter-class>Filters.SecurityFilter</filter-class>
+  </filter>
+
+  <filter>
+    <filter-name>SessionFilter</filter-name>
+    <filter-class>Filters.SessionFilter</filter-class>
+  </filter>
+
+  <filter-mapping>
+    <filter-name>SecurityFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+
+  <filter-mapping>
+    <filter-name>SessionFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+
+  <servlet>
+    <servlet-name>ServletProcessor</servlet-name>
+    <servlet-class>ServletProcessor.ServletAPI</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletProcessor</servlet-name>
+    <url-pattern>/*</url-pattern>
+  </servlet-mapping>
+</web-app>
